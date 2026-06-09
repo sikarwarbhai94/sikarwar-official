@@ -113,16 +113,15 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .terms {
-            position: absolute;
-            /* bottom: 16px; */
-            right: 16px;
-            /* font-size: 12px; */
-            /* margin-right: 16px; */
-            margin-top: 40px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
         }
+
         .terms a {
-            font-size: 12px;
-            margin-left: 8px;
+            font-size: 14px;
             text-decoration: underline;
         }
     </style>
@@ -131,10 +130,12 @@
 <body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-inverse-surface/80 backdrop-blur-md border-b border-white/10 shadow-md">
+
+</div>
 <nav class="flex justify-between items-center px-8 py-4 max-w-container-max mx-auto">
 <div class="flex items-center gap-3">
 <img alt="Prashant Singh Sikarwar Logo" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYVFnh8Gzr2s-LhzHCyX4w-zJ6ku3pFAHiqXR3GWh7exwvhBJcEuus9DnY10WUJ--gRTepnz_0tjmKagUSny2-SqWi6LKZVUmi3s_aCTVzkLJKaKc-Cct1fM2w8H0tNlH9Q9RkBOqpCweLAV60U0q_xZDgsN0csxoXMxUBJszxcUqZ_EWmlo2LY6J4HU7pJZjyfygb23wA2Wxj_1kKSDWAD3S1Qvx8_w45gLS4k230IOTM6ltwoa8ZLKosQAvB3dYwCEIw0oUaYhE">
-<span class="font-display-lg-mobile text-[24px] font-bold text-primary-fixed">IND SIKARWAR OFFICIAL</span>
+<span class="hidden md:block text-[24px] font-bold text-primary-fixed">IND SIKARWAR OFFICIAL</span>
 </div>
 <div class="hidden md:flex gap-8 items-center">
 <a class="text-primary-fixed-dim border-b-2 border-secondary font-bold pb-1 font-body-md text-body-md" href="#home">Home</a>
@@ -150,13 +151,53 @@ class="material-symbols-outlined text-primary-fixed-dim cursor-pointer hover:bg-
 dark_mode
 <!-- <span class="material-symbols-outlined text-primary-fixed-dim cursor-pointer hover:bg-white/5 p-2 rounded-full transition-all">dark_mode</span> -->
 </button>
+<button id="menuBtn"
+class="text-3xl text-primary-fixed md:hidden">
+☰
+</button>
 
 <a href="login_resource_center/code.html">
-    <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform">Login</button>
+    <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform hidden md:block">Login</button>
+</a>
+<a href="sign_up_resource_center/code.html">
+    <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform hidden md:block">SignUp</button>
 </a>
 </div>
 </nav>
 </header>
+<div id="mobileMenu" class="fixed inset-0 bg-white z-50 hidden">
+
+    <!-- Close Button -->
+    <div class="flex justify-end p-4">
+        <button id="closeBtn" class="text-4xl">
+            ×
+        </button>
+    </div>
+
+    <!-- Menu Links -->
+    <div class="flex flex-col px-8">
+
+        <a href="#home" class="py-4 border-b">Home</a>
+
+        <a href="#services" class="py-4 border-b">Services</a>
+
+        <a href="#portfolio" class="py-4 border-b">Portfolio</a>
+
+        <a href="#about" class="py-4 border-b">About</a>
+
+        <a href="#contact" class="py-4 border-b">Contact</a>
+
+        <a href="login_resource_center/code.html" class="py-4 border-b">
+            Login
+        </a>
+
+        <a href="sign_up_resource_center/code.html" class="py-4 border-b">
+            SignUp
+        </a>
+
+    </div>
+
+</div>
 <main>
 <!-- Hero Section -->
 <section class="relative pt-32 pb-xl overflow-hidden px-gutter" id="home">
@@ -510,10 +551,10 @@ dark_mode
 <a class="text-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="https://www.linkedin.com/in/prashant-singh-sikarwar-1aa731371/">LinkedIn</a>
 <a class="text-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="https://github.com/sikarwarbhai94">GitHub</a>
 <a class="text-secondary-container font-body-md text-body-md hover:-translate-y-1 transition-transform inline-flex items-center gap-1" href="#home">Back to Top <span class="material-symbols-outlined text-sm">arrow_upward</span></a>
+</div>
 <div class="terms">
 <a class="text-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="Privacy Policy\privacy.html">Privacy Policy</a>
 <a class="text-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="Privacy Policy\terms.html">Terms of Service</a>
-</div>
 </div>
 </div>
 </footer>
@@ -557,5 +598,46 @@ dark_mode
         });
 </script>
 
+<!-- <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+    });
+
+});
+</script> -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+    });
+
+    // Auto close menu when any link is clicked
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+
+});
+</script>
 
 </body></html>
