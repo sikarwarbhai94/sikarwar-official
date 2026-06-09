@@ -1,0 +1,256 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Login | Prashant Singh Sikarwar Resource Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="l1.css" rel="stylesheet">
+<link href="l2.css" rel="stylesheet">
+<link href="l3.css" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f4fbf8",
+                    "inverse-surface": "#2b3230",
+                    "primary-fixed-dim": "#4fdbc8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#161d1b",
+                    "on-surface-variant": "#3c4947",
+                    "surface-bright": "#f4fbf8",
+                    "on-secondary-container": "#6d5200",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "surface-container-high": "#e3eae7",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-low": "#eff5f2",
+                    "on-tertiary-container": "#6c2106",
+                    "inverse-primary": "#4fdbc8",
+                    "surface-container-highest": "#dde4e1",
+                    "surface-tint": "#006b5f",
+                    "on-surface": "#161d1b",
+                    "on-error": "#ffffff",
+                    "primary": "#006b5f",
+                    "secondary": "#785a00",
+                    "secondary-fixed-dim": "#f7be1d",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#dde4e1",
+                    "on-secondary-fixed-variant": "#5a4300",
+                    "surface": "#f4fbf8",
+                    "on-primary-container": "#00423b",
+                    "surface-dim": "#d5dbd9",
+                    "on-primary-fixed-variant": "#005048",
+                    "outline": "#6c7a77",
+                    "secondary-fixed": "#ffdf9a",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fdc425",
+                    "outline-variant": "#bbcac6",
+                    "primary-container": "#14b8a6",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#f38764",
+                    "tertiary": "#9b4426",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "surface-container": "#e9efec",
+                    "on-primary-fixed": "#00201c",
+                    "on-tertiary-fixed-variant": "#7c2d11",
+                    "inverse-on-surface": "#ecf2ef",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#71f8e4",
+                    "on-secondary-fixed": "#251a00",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "container-max": "1280px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "lg": "48px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Sora"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Sora"],
+                    "headline-sm": ["Sora"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Sora"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f4fbf8;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(247, 190, 29, 0.05) 0px, transparent 50%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .terms {
+            position: absolute;
+            /* bottom: 16px; */
+            right: 16px;
+            /* font-size: 12px; */
+            /* margin-right: 16px; */
+        }
+        .terms a {
+            font-size: 12px;
+            margin-left: 8px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background flex flex-col">
+<!-- Header / Brand Anchor -->
+<header class="fixed top-0 w-full z-50 bg-inverse-surface/80 backdrop-blur-md border-b border-white/10 shadow-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-container-max mx-auto">
+<div class="h-12 w-auto"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYVFnh8Gzr2s-LhzHCyX4w-zJ6ku3pFAHiqXR3GWh7exwvhBJcEuus9DnY10WUJ--gRTepnz_0tjmKagUSny2-SqWi6LKZVUmi3s_aCTVzkLJKaKc-Cct1fM2w8H0tNlH9Q9RkBOqpCweLAV60U0q_xZDgsN0csxoXMxUBJszxcUqZ_EWmlo2LY6J4HU7pJZjyfygb23wA2Wxj_1kKSDWAD3S1Qvx8_w45gLS4k230IOTM6ltwoa8ZLKosQAvB3dYwCEIw0oUaYhE" alt="IS Logo" class="h-full w-auto object-contain"></div>
+<div class="hidden md:flex gap-md items-center">
+<a class="font-body-md text-body-md text-surface-container-highest hover:text-primary-fixed-dim transition-colors" href="..\index.html">Home</a>
+<a class="font-body-md text-body-md text-surface-container-highest hover:text-primary-fixed-dim transition-colors" href="..\index.html#services">Services</a>
+<button class="p-xs text-primary-container dark:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-lg active:scale-95">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center px-gutter pt-xl">
+<div class="w-full max-w-[480px] py-xl">
+<!-- Glassmorphic Login Card -->
+<div class="glass-card rounded-xl p-md md:p-lg space-y-md animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="text-center space-y-xs"><div class="flex justify-center mb-md"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYVFnh8Gzr2s-LhzHCyX4w-zJ6ku3pFAHiqXR3GWh7exwvhBJcEuus9DnY10WUJ--gRTepnz_0tjmKagUSny2-SqWi6LKZVUmi3s_aCTVzkLJKaKc-Cct1fM2w8H0tNlH9Q9RkBOqpCweLAV60U0q_xZDgsN0csxoXMxUBJszxcUqZ_EWmlo2LY6J4HU7pJZjyfygb23wA2Wxj_1kKSDWAD3S1Qvx8_w45gLS4k230IOTM6ltwoa8ZLKosQAvB3dYwCEIw0oUaYhE" alt="IS Logo" class="h-20 w-auto object-contain"></div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Please enter your details to sign in</p>
+</div>
+<!-- Form -->
+<form class="space-y-md" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="space-y-base">
+<label class="font-label-caps text-label-caps text-outline uppercase tracking-wider" for="email">Email Address</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-outline material-symbols-outlined" data-icon="mail">mail</span>
+<input class="w-full pl-[52px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-transparent outline-none transition-all font-body-md" id="email" placeholder="name@company.com" type="email">
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-base">
+<label class="font-label-caps text-label-caps text-outline uppercase tracking-wider" for="password">Password</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-outline material-symbols-outlined" data-icon="lock">lock</span>
+<input class="w-full pl-[52px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-transparent outline-none transition-all font-body-md" id="password" placeholder="••••••••" type="password">
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-xs cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-outline-variant text-primary-container focus:ring-primary-container/20" type="checkbox">
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Remember Me</span>
+</label>
+<a class="font-body-md text-body-md text-primary font-semibold hover:underline decoration-2 underline-offset-4" href="#">Forgot Password?</a>
+</div>
+<!-- Login Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-headline-sm text-[18px] py-sm rounded-lg hover:brightness-105 active:scale-[0.98] transition-all shadow-md" type="submit">
+                        Login
+                    </button>
+</form>
+<div class="relative flex items-center py-xs">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-md font-label-caps text-label-caps text-outline">OR CONTINUE WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Social Login -->
+<button class="w-full flex items-center justify-center gap-sm bg-surface-container-lowest border border-outline-variant py-sm rounded-lg hover:bg-surface-container-low active:scale-[0.98] transition-all font-body-md font-semibold text-on-surface-variant">
+<svg class="w-5 h-5" viewBox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                    Sign in with Google
+                </button>
+<!-- Footer Link -->
+<p class="text-center font-body-md text-body-md text-on-surface-variant pt-base">
+                    Don't have an account? 
+                    <a class="text-secondary font-bold hover:underline decoration-2 underline-offset-4" href="..\sign_up_resource_center\code.html">Sign up</a>
+</p>
+</div>
+<!-- Contextual Graphics (Decorative) -->
+<div class="mt-lg flex justify-center gap-md opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="h-12 w-12 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+</div>
+<div class="h-12 w-12 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="analytics">analytics</span>
+</div>
+<div class="h-12 w-12 rounded-full bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="cloud_done">cloud_done</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg bg-inverse-surface dark:bg-on-background border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto space-y-md md:space-y-0">
+<div class="h-10 w-auto"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYVFnh8Gzr2s-LhzHCyX4w-zJ6ku3pFAHiqXR3GWh7exwvhBJcEuus9DnY10WUJ--gRTepnz_0tjmKagUSny2-SqWi6LKZVUmi3s_aCTVzkLJKaKc-Cct1fM2w8H0tNlH9Q9RkBOqpCweLAV60U0q_xZDgsN0csxoXMxUBJszxcUqZ_EWmlo2LY6J4HU7pJZjyfygb23wA2Wxj_1kKSDWAD3S1Qvx8_w45gLS4k230IOTM6ltwoa8ZLKosQAvB3dYwCEIw0oUaYhE" alt="IS Logo" class="h-full w-auto object-contain"></div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-surface-variant hover:text-secondary-fixed transition-colors hover:-translate-y-1 transform transition-transform" href="mailto:indsikarwarofficial@gmail.com">Gmail</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-secondary-fixed transition-colors hover:-translate-y-1 transform transition-transform" href="https://www.instagram.com/sikarwar_yt/">Instagram</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-secondary-fixed transition-colors hover:-translate-y-1 transform transition-transform" href="https://www.linkedin.com/in/prashant-singh-sikarwar-1aa731371/">LinkedIn</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-secondary-fixed transition-colors hover:-translate-y-1 transform transition-transform" href="https://github.com/sikarwarbhai94">GitHub</a>
+</div>
+<p class="font-body-md text-body-md text-surface-variant text-center md:text-right">
+                © 2026 IND SIKARWAR OFFICIAL. All rights reserved.
+            </p>
+</div>
+<div class="terms">
+                <a class="text-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="..\Privacy Policy\privacy.html">Privacy Policy</a>
+                <a class="text-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="..\Privacy Policy\terms.html">Terms of Service</a>
+</div>
+</footer>
+<!-- Simple Interactivity for the login page experience -->
+<script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('.material-symbols-outlined')?.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('.material-symbols-outlined')?.classList.remove('text-primary');
+            });
+        });
+    </script>
+
+
+</body></html>
